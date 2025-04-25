@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>App Bonjour</title>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenue</h1>
+    <button onclick="getMessage()">Afficher le message</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    async function getMessage() {
+      try {
+        const response = await fetch("http://localhost:3000/api/message");
+        const data = await response.json();
+        document.getElementById("message").textContent = data.message;
+      } catch (error) {
+        document.getElementById("message").textContent = "Erreur : " + error;
+      }
+    }
+  </script>
+</body>
+</html>
