@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3000;
 
 // Autoriser les requêtes CORS
-app.use(cors());
+app.use22(cors());
 
 app.get("/api/message", (req, res) => {
   res.json({ message: "Bonjour depuis le serveur!!! ! 👋" });
