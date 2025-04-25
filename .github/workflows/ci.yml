@@ -18,12 +18,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd backend
+        cd back
         npm install
 
     - name: Test API
       run: |
-        cd backend
+        cd back
         node server.js &
         sleep 3
         curl http://localhost:3000/api/message

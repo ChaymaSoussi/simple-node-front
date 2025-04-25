@@ -8,7 +8,7 @@ const PORT = 3000;
 app.use(cors());
 
 app.get("/api/message", (req, res) => {
-  res.json({ message: "Bonjour depuis le serveur ! 👋" });
+  res.json({ message: "Bonjour depuis le serveur!!! ! 👋" });
 });
 
 app.listen(PORT, () => {
