@@ -1,0 +1,29 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  backend-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        cd backend
+        npm install
+
+    - name: Test API
+      run: |
+        cd backend
+        node server.js &
+        sleep 3
+        curl http://localhost:3000/api/message
